@@ -21,3 +21,6 @@ build/blink.elf: build/blink.o memmap.ld
 
 flash: build/blink.elf
 	sudo openocd
+
+clean:
+	@rm -rf build
