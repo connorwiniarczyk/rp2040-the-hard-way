@@ -26,7 +26,7 @@ build/blink.o: blink.c
 	@mkdir -p build
 	$(CC) $(COMPILER_ARGS) -c $< -o $@
 
-build/blink.elf: build/start.o build/blink.o memmap.ld
+build/blink.elf: build/start.o build/blink.o build/boot2.o memmap.ld
 	@mkdir -p build
 	$(LD) $(LINKER_ARGS) -T memmap.ld build/boot2.o build/start.o build/blink.o -o $@
 
